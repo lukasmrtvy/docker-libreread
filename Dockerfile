@@ -41,4 +41,7 @@ EXPOSE 8080
 
 USER ${USER}
 
+LABEL version=${LIBREREAD_VERSION}
+LABEL url=https://github.com/joyread/server
+
 ENTRYPOINT ["libreread"]
