@@ -3,7 +3,7 @@ FROM golang:alpine as builder
 ENV LIBREREAD_VERSION 1.2.4
 
 RUN apk add --no-cache musl-dev gcc git curl
-RUN mkdir -p /go/src/github.com/LibreRead/server  && curl -sSL https://github.com/LibreRead/server/archive/v${LIBREREAD_VERSION}.tar.gz | tar xz -C /go/src/github.com/LibreRead/server --strip$
+RUN mkdir -p /go/src/github.com/LibreRead/server  && curl -sSL https://github.com/LibreRead/server/archive/v${LIBREREAD_VERSION}.tar.gz | tar xz -C /go/src/github.com/LibreRead/server --strip-components=1
 WORKDIR /go/src/github.com/LibreRead/server
 
 RUN go get -d -v ./...
